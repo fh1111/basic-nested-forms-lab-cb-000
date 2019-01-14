@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if @recipe.ingredients.last.try(:name)
       @recipe.ingredients.build
-end
+    end
   end
 
   def index
@@ -15,5 +15,11 @@ end
   end
 
   def create
+  end
+
+  def update
+    recipe = Recipe.find(params[:id])
+    recipe.update(recipe_params)
+    redirect_to recipe
   end
 end
