@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
     recipe.update(recipe_params)
     redirect_to recipe
   end
+  
   private
 
   def recipe_params
